@@ -10,6 +10,7 @@ const port = 8002;
 //============================================================================
 
 const servierRequestsRouter = require("./router/servicerequestsData");
+const workersRouter = require("./router/workersData");
 
 //middleware to allow us to POST and get JSON from our endpoints.
 app.use(express.json());
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/servicerequests", servierRequestsRouter);
+app.use("/workers", workersRouter);
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
