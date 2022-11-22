@@ -82,8 +82,16 @@ const updateServiceRequestsById = (req, res) => {
   );
 };
 
+const getRespondedServiceRequests = (req, res) => {
+  pool.query(queries.getRespondedServiceRequests, (error, results) => {
+    if (error) throw error;
+    res.status(200).json(results.rows);
+  });
+};
+
 module.exports = {
   getServiceRequests,
   createServiceRequests,
   updateServiceRequestsById,
+  getRespondedServiceRequests,
 };
