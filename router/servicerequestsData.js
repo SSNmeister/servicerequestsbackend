@@ -4,6 +4,7 @@ const controller = require("../controller/servicerequests");
 const router = Router();
 
 router.get("/", controller.getServiceRequests);
+router.get("/:id", controller.getServiceRequestsById);
 router.put("/", controller.updateServiceRequestsById);
 router.post("/", controller.createServiceRequests);
 
