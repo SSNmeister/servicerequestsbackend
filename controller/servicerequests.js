@@ -8,6 +8,14 @@ const getServiceRequests = (req, res) => {
   });
 };
 
+const getServiceRequestsById = (req, res) => {
+  const id = parseInt(req.params.id);
+  pool.query(queries.getServiceRequestsById, [id], (error, results) => {
+    if (error) throw error;
+    res.status(200).json(results.rows);
+  });
+};
+
 const createServiceRequests = (req, res) => {
   const {
     project,
@@ -91,6 +99,7 @@ const getRespondedServiceRequests = (req, res) => {
 
 module.exports = {
   getServiceRequests,
+  getServiceRequestsById,
   createServiceRequests,
   updateServiceRequestsById,
   getRespondedServiceRequests,
