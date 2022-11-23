@@ -1,6 +1,8 @@
 //==============================Service Requests=============================
 const createServiceRequests =
-  "INSERT INTO service_requests (project, date, main_contractor, pic, job_item, location, workers, time, pax, transport) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+  "INSERT INTO service_requests (project, date, main_contractor, pic, time, pax, transport, jobs) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)";
+// const createServiceRequests =
+//   "INSERT INTO service_requests (project, date, main_contractor, pic, job_item, location, workers, time, pax, transport) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
 const getServiceRequests = "SELECT * FROM service_requests";
 const getServiceRequestsById = "SELECT * FROM service_requests WHERE id = $1";
 const updateServiceRequestsById =
