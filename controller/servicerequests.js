@@ -66,6 +66,7 @@ const updateServiceRequestsById = (req, res) => {
     time,
     pax,
     transport,
+    response,
   } = req.body;
 
   pool.query(
@@ -81,6 +82,7 @@ const updateServiceRequestsById = (req, res) => {
       time,
       pax,
       transport,
+      response,
       id,
     ],
     (error, results) => {

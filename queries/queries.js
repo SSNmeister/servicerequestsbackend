@@ -4,8 +4,7 @@ const createServiceRequests =
 const getServiceRequests = "SELECT * FROM service_requests";
 const getServiceRequestsById = "SELECT * FROM service_requests WHERE id = $1";
 const updateServiceRequestsById =
-  "UPDATE service_requests SET project = $1, date = $2, main_contractor = $3, pic = $4, job_item = $5, location = $6, workers = $7, time = $8, pax = $9, transport = $10 WHERE id = $11";
-
+  "UPDATE service_requests SET project = $1, date = $2, main_contractor = $3, pic = $4, job_item = $5, location = $6, workers = $7, time = $8, pax = $9, transport = $10, response = $11 WHERE id = $12";
 const getRespondedServiceRequests =
   "SELECT * FROM service_requests WHERE response = 'yes'";
 
